@@ -14,13 +14,18 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in!') }} <br>
 
+                    @if(Auth::user()->level_as=="admin")
                     <table class="table table-responsive">
                         <tr><th>Username</th><th>:</th><td>{{$user->username}}</td></tr>
                         <tr><th>Name</th><th>:</th><td>{{$user->name}}</td></tr>
                         <tr><th>Email</th><th>:</th><td>{{$user->email}}</td></tr>
                         <tr><th>Created</th><th>:</th><td>{{$user->created_at}}</td></tr>
+                    </table>
+                    @else
+                    <h1>Halaman Index User</h1>
+                    @endif
                 </div>
             </div>
         </div>
